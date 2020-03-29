@@ -1,5 +1,12 @@
-version: 0.0
+#version: 0.0
+#os: linux
+#files:
+#  - source: /
+#    destination: ~/projects/AWS/IOTs
+--- 
+files: 
+  - 
+    destination: /projects/AWS/IOTs
+    source: /
 os: linux
-files:
-  - source: /
-    destination: ~/projects/AWS/IOTs
+version: 0.0
