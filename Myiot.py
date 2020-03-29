@@ -1,12 +1,12 @@
 import paho.mqtt.client as mqtt
 import ssl
 
-rootca=r'AmazonRootCA1.pem.txt'
-certificatefile=r'f1fec06bc3-certificate.pem.crt'
-mykeyfile=r'f1fec06bc3-private.pem.key'
+rootca=r'./keys/AmazonRootCA1.pem.txt'
+certificatefile=r'./keys/f1fec06bc3-certificate.pem.crt'
+mykeyfile=r'./keys/f1fec06bc3-private.pem.key'
 
 clientconnect= mqtt.Client()
-clientconnect.tls_set(ca_certs=rootca, certfile=certificatefile, keyfile=mykeyfile, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLS, ciphers=None)
+clientconnect.tls_set(ca_certs=rootca, certfile=certificatefile, keyfile=mykeyfile, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
 clientconnect.connect('a8osgt7o1c657-ats.iot.us-west-2.amazonaws.com', 8883)
 
 def onc(clientconnect,userdata,flags,rc):
